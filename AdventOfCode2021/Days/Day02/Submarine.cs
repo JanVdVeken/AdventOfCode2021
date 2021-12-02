@@ -6,6 +6,7 @@ namespace Days
     {
         public int PositionDepth;
         public int PositionHorizontal;
+        public int Aim = 0;
 
         public Submarine(int positionDepth, int positionHorizontal)
         {
@@ -33,5 +34,23 @@ namespace Days
                     break;
             }
         }
+
+        public void ReAim(Command command)
+        {
+            switch(command.Direction)
+            {
+                case "forward":
+                    PositionHorizontal += command.Amount;
+                    PositionDepth += Aim * command.Amount;
+                    break;
+                case "down":
+                    Aim += command.Amount;
+                    break;
+                case "up":
+                    Aim -= command.Amount;
+                    break;
+            }
+        }
+        
     }
 }

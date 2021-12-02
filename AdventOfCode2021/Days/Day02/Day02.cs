@@ -24,7 +24,14 @@ namespace Days
 
         public override string Puzzle2(IEnumerable<string> inputsString)
         {
-            throw new System.NotImplementedException();
+            Submarine sub = new Submarine(0, 0);
+            List<Command> commands = new List<Command>();
+            foreach (var line in inputsString)
+            {
+                commands.Add(new Command(line.Split(" ")[0],int.Parse(line.Split(" ")[1])));
+            }
+            commands.ForEach(x => sub.ReAim(x));
+            return sub.CalcPosition().ToString();
         }
     }
 }
