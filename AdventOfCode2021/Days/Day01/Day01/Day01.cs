@@ -10,7 +10,7 @@ namespace Day01
         public Day01()
         {
             DayNumber = 1;
-            Title = "TBD";
+            Title = "Sonar Sweep";
         }
         public override IEnumerable<string> GatherInput()
         {
@@ -32,7 +32,13 @@ namespace Day01
 
         public override string Puzzle2(IEnumerable<string> inputsString)
         {
-            throw new System.NotImplementedException();
+            var inputs = inputsString.Select(x => int.Parse(x)).ToList();
+            int count = 0;
+            for (int i = 3; i < inputs.Count(); i++)
+            {
+                count += inputs[i] > inputs[i - 3] ? 1 : 0;
+            }
+            return count.ToString();
         }
     }
 }
