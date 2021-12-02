@@ -8,7 +8,7 @@ namespace AdventOfCode2021
 {
     class Program
     {
-        public static List<Day> days = new()
+        public static List<Day> Days = new()
         {
             new Day01(),
             new Day02()
@@ -18,11 +18,11 @@ namespace AdventOfCode2021
             while (true)
             {
                 Console.WriteLine("Which Day do you want ?");
-                days.Where(x => x.Title != null).ToList().ForEach(x => x.PrintInfo());
+                Days.Where(x => x.Title != null).ToList().ForEach(x => x.PrintInfo());
                 var input = Console.ReadLine();
-                if (int.TryParse(input, out var chosenDay) && days.SingleOrDefault(x => x.DayNumber == chosenDay) != null)
+                if (int.TryParse(input, out var chosenDay) && Days.SingleOrDefault(x => x.DayNumber == chosenDay) != null)
                 {
-                    var day = days.Single(x => x.DayNumber == chosenDay);
+                    var day = Days.Single(x => x.DayNumber == chosenDay);
                     day.HandleSelect();
                     day.Deselect();
                 }

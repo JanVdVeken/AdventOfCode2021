@@ -1,12 +1,10 @@
-﻿using System.Diagnostics;
-
-namespace Days
+﻿namespace Days
 {
     public class Submarine
     {
         public int PositionDepth;
         public int PositionHorizontal;
-        public int Aim = 0;
+        public int Aim;
 
         public Submarine(int positionDepth, int positionHorizontal)
         {

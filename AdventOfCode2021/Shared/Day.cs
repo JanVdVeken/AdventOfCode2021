@@ -11,9 +11,7 @@ namespace Shared
     {
         public string Title;
         public int DayNumber;
-        public Day()
-        {
-        }
+
         public void PrintInfo()
         {
             Console.WriteLine($"{DayNumber}. {Title}");
@@ -60,32 +58,5 @@ namespace Shared
         public abstract string Puzzle1(IEnumerable<string> inputsString);
 
         public abstract string Puzzle2(IEnumerable<string> inputsString);
-
-        public static void Performance_logging(params Action[] actions)
-        {
-            Stopwatch stopwatch = new();
-            Dictionary<string, double> timings_per_action = new();
-            Console.WriteLine("Results:");
-            foreach (var action in actions)
-            {
-                var action_name = action.GetMethodInfo().Name;
-                if (action_name != "Gather_input")
-                    Console.WriteLine(action_name);
-                stopwatch.Reset();
-                stopwatch.Start();
-                action();
-                stopwatch.Stop();
-                timings_per_action.Add(action.GetMethodInfo().Name, (double)stopwatch.ElapsedTicks / TimeSpan.TicksPerMillisecond);
-                Console.WriteLine();
-            }
-            Console.WriteLine();
-            Console.WriteLine("Performance metrics");
-            foreach (var timing in timings_per_action)
-            {
-                Console.WriteLine($"{timing.Key}: {timing.Value} ms");
-            }
-            Console.WriteLine();
-            stopwatch.Reset();
-        }
     }
 }
