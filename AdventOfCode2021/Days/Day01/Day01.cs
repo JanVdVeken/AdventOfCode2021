@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Shared;
 
-namespace Day01
+namespace Days
 {
     public class Day01 : Day
     {

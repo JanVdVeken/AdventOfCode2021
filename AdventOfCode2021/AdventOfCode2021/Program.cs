@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using Shared;
+using Days;
 
 namespace AdventOfCode2021
 {
@@ -9,7 +10,7 @@ namespace AdventOfCode2021
     {
         public static List<Day> days = new()
         {
-            new Day01.Day01()
+            new Day01()
         };
         static void Main(string[] args)
         {
