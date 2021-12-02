@@ -1,11 +1,30 @@
 {
   "version": 3,
   "targets": {
-    "net6.0": {}
+    "net6.0": {
+      "D02/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/D02.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/D02.dll": {}
+        }
+      }
+    }
   },
-  "libraries": {},
+  "libraries": {
+    "D02/1.0.0": {
+      "type": "project",
+      "path": "../Days/D02/D02/D02.csproj",
+      "msbuildProject": "../Days/D02/D02/D02.csproj"
+    }
+  },
   "projectFileDependencyGroups": {
-    "net6.0": []
+    "net6.0": [
+      "D02 >= 1.0.0"
+    ]
   },
   "packageFolders": {
     "C:\\Users\\vande\\.nuget\\packages\\": {}
@@ -31,7 +50,11 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\vande\\OneDrive\\Bureaublad\\GitRoot\\AdventOfCode\\AdventOfCode2021\\AdventOfCode2021\\Days\\D02\\D02\\D02.csproj": {
+              "projectPath": "C:\\Users\\vande\\OneDrive\\Bureaublad\\GitRoot\\AdventOfCode\\AdventOfCode2021\\AdventOfCode2021\\Days\\D02\\D02\\D02.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

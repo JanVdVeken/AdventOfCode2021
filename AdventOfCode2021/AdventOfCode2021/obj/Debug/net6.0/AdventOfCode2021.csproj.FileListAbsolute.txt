@@ -13,3 +13,6 @@ C:\Users\vande\OneDrive\Bureaublad\GitRoot\AdventOfCode\AdventOfCode2021\AdventO
 C:\Users\vande\OneDrive\Bureaublad\GitRoot\AdventOfCode\AdventOfCode2021\AdventOfCode2021\AdventOfCode2021\obj\Debug\net6.0\ref\AdventOfCode2021.dll
 C:\Users\vande\OneDrive\Bureaublad\GitRoot\AdventOfCode\AdventOfCode2021\AdventOfCode2021\AdventOfCode2021\obj\Debug\net6.0\AdventOfCode2021.pdb
 C:\Users\vande\OneDrive\Bureaublad\GitRoot\AdventOfCode\AdventOfCode2021\AdventOfCode2021\AdventOfCode2021\obj\Debug\net6.0\AdventOfCode2021.genruntimeconfig.cache
+C:\Users\vande\OneDrive\Bureaublad\GitRoot\AdventOfCode\AdventOfCode2021\AdventOfCode2021\AdventOfCode2021\bin\Debug\net6.0\D02.dll
+C:\Users\vande\OneDrive\Bureaublad\GitRoot\AdventOfCode\AdventOfCode2021\AdventOfCode2021\AdventOfCode2021\bin\Debug\net6.0\D02.pdb
+C:\Users\vande\OneDrive\Bureaublad\GitRoot\AdventOfCode\AdventOfCode2021\AdventOfCode2021\AdventOfCode2021\obj\Debug\net6.0\AdventOfCode2021.csproj.CopyComplete
