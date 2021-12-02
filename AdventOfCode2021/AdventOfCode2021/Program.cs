@@ -1,19 +1,36 @@
-﻿// See https://aka.ms/new-console-template for more information
-
-using System;
+﻿using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Linq;
-using D02.Records;
+using Shared;
 
-
-var input =File.ReadLines(@"C:\Users\vande\OneDrive\Bureaublad\GitRoot\AdventOfCode\AdventOfCode2021\AdventOfCode2021\Inputs\D02.txt");
-List<Command> commands = new List<Command>();
-foreach (var inputline in input)
+namespace AdventOfCode2021
 {
-    commands.Add(new Command(inputline.Split(" ")[0],int.Parse(inputline.Split(" ")[1])));
+    class Program
+    {
+        public static List<Day> days = new()
+        {
+            new Day01.Day01()
+        };
+        static void Main(string[] args)
+        {
+            while (true)
+            {
+                Console.WriteLine("Which Day do you want ?");
+                days.Where(x => x.Title != null).ToList().ForEach(x => x.PrintInfo());
+                var input = Console.ReadLine();
+                if (int.TryParse(input, out var chosenDay) && days.SingleOrDefault(x => x.DayNumber == chosenDay) != null)
+                {
+                    var day = days.Single(x => x.DayNumber == chosenDay);
+                    day.HandleSelect();
+                    day.Deselect();
+                }
+                else
+                {
+                    Console.WriteLine("Day not found, Press Key to go back to main menu");
+                    Console.ReadKey();
+                    Console.Clear();
+                }
+            }
+        }
+    }
 }
-
-Submarine submarine = new Submarine(0,0);
-commands.ForEach(x => submarine.Move(x));
-Console.WriteLine(submarine.CalcPosition());

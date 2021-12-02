@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "k0V8g3LXmfbxaDqJ7zEfz1FjF58avn1KyEm8gWtTXX86DobL1nFnzKEdLcYdtC3eGxCgdlcMJPmppDRwTf3F+Q==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\vande\\OneDrive\\Bureaublad\\GitRoot\\AdventOfCode\\AdventOfCode2021\\AdventOfCode2021\\Shared\\Shared.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\vande\\.nuget\\packages\\microsoft.netcore.app.ref\\5.0.0\\microsoft.netcore.app.ref.5.0.0.nupkg.sha512",
+    "C:\\Users\\vande\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\5.0.0\\microsoft.windowsdesktop.app.ref.5.0.0.nupkg.sha512",
+    "C:\\Users\\vande\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\5.0.0\\microsoft.aspnetcore.app.ref.5.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}

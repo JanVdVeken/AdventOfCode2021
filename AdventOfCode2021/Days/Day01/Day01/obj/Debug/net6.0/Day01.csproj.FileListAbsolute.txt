@@ -1,0 +1,15 @@
+C:\Users\vande\OneDrive\Bureaublad\GitRoot\AdventOfCode\AdventOfCode2021\AdventOfCode2021\Days\Day01\Day01\bin\Debug\net6.0\Day01.deps.json
+C:\Users\vande\OneDrive\Bureaublad\GitRoot\AdventOfCode\AdventOfCode2021\AdventOfCode2021\Days\Day01\Day01\bin\Debug\net6.0\Day01.dll
+C:\Users\vande\OneDrive\Bureaublad\GitRoot\AdventOfCode\AdventOfCode2021\AdventOfCode2021\Days\Day01\Day01\bin\Debug\net6.0\ref\Day01.dll
+C:\Users\vande\OneDrive\Bureaublad\GitRoot\AdventOfCode\AdventOfCode2021\AdventOfCode2021\Days\Day01\Day01\bin\Debug\net6.0\Day01.pdb
+C:\Users\vande\OneDrive\Bureaublad\GitRoot\AdventOfCode\AdventOfCode2021\AdventOfCode2021\Days\Day01\Day01\bin\Debug\net6.0\Shared.dll
+C:\Users\vande\OneDrive\Bureaublad\GitRoot\AdventOfCode\AdventOfCode2021\AdventOfCode2021\Days\Day01\Day01\bin\Debug\net6.0\Shared.pdb
+C:\Users\vande\OneDrive\Bureaublad\GitRoot\AdventOfCode\AdventOfCode2021\AdventOfCode2021\Days\Day01\Day01\obj\Debug\net6.0\Day01.csproj.AssemblyReference.cache
+C:\Users\vande\OneDrive\Bureaublad\GitRoot\AdventOfCode\AdventOfCode2021\AdventOfCode2021\Days\Day01\Day01\obj\Debug\net6.0\Day01.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\vande\OneDrive\Bureaublad\GitRoot\AdventOfCode\AdventOfCode2021\AdventOfCode2021\Days\Day01\Day01\obj\Debug\net6.0\Day01.AssemblyInfoInputs.cache
+C:\Users\vande\OneDrive\Bureaublad\GitRoot\AdventOfCode\AdventOfCode2021\AdventOfCode2021\Days\Day01\Day01\obj\Debug\net6.0\Day01.AssemblyInfo.cs
+C:\Users\vande\OneDrive\Bureaublad\GitRoot\AdventOfCode\AdventOfCode2021\AdventOfCode2021\Days\Day01\Day01\obj\Debug\net6.0\Day01.csproj.CoreCompileInputs.cache
+C:\Users\vande\OneDrive\Bureaublad\GitRoot\AdventOfCode\AdventOfCode2021\AdventOfCode2021\Days\Day01\Day01\obj\Debug\net6.0\Day01.csproj.CopyComplete
+C:\Users\vande\OneDrive\Bureaublad\GitRoot\AdventOfCode\AdventOfCode2021\AdventOfCode2021\Days\Day01\Day01\obj\Debug\net6.0\Day01.dll
+C:\Users\vande\OneDrive\Bureaublad\GitRoot\AdventOfCode\AdventOfCode2021\AdventOfCode2021\Days\Day01\Day01\obj\Debug\net6.0\ref\Day01.dll
+C:\Users\vande\OneDrive\Bureaublad\GitRoot\AdventOfCode\AdventOfCode2021\AdventOfCode2021\Days\Day01\Day01\obj\Debug\net6.0\Day01.pdb
