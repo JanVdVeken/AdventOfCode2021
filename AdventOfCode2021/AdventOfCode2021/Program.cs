@@ -8,6 +8,7 @@ namespace AdventOfCode2021
 {
     class Program
     {
+        private static InputGetter _inputGetter = new InputGetter();
         public static List<Day> days = new()
         {
             new Day01(),
@@ -15,6 +16,7 @@ namespace AdventOfCode2021
         };
         static void Main(string[] args)
         {
+            _inputGetter.GetInput();
             while (true)
             {
                 Console.WriteLine("Which Day do you want ?");

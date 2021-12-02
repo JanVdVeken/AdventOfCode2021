@@ -34,7 +34,6 @@ namespace Shared
                     HandleSelect();
                     break;
             }
-            
         }
 
         public void Deselect()
