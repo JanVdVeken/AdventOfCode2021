@@ -9,7 +9,7 @@
 
     <ItemGroup>
       <ProjectReference Include="..\Days\Day01\Day01.csproj" />
-      <ProjectReference Include="..\Days\Day01\Day01\Day01.csproj" />
+      <ProjectReference Include="..\Days\Day02\Day02.csproj" />
       <ProjectReference Include="..\Shared\Shared.csproj" />
     </ItemGroup>
 

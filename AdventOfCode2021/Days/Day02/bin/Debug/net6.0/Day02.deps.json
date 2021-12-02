@@ -6,24 +6,6 @@
   "compilationOptions": {},
   "targets": {
     ".NETCoreApp,Version=v6.0": {
-      "AdventOfCode2021/1.0.0": {
-        "dependencies": {
-          "Day01": "1.0.0",
-          "Day02": "1.0.0",
-          "Shared": "1.0.0"
-        },
-        "runtime": {
-          "AdventOfCode2021.dll": {}
-        }
-      },
-      "Day01/1.0.0": {
-        "dependencies": {
-          "Shared": "1.0.0"
-        },
-        "runtime": {
-          "Day01.dll": {}
-        }
-      },
       "Day02/1.0.0": {
         "dependencies": {
           "Shared": "1.0.0"
@@ -40,16 +22,6 @@
     }
   },
   "libraries": {
-    "AdventOfCode2021/1.0.0": {
-      "type": "project",
-      "serviceable": false,
-      "sha512": ""
-    },
-    "Day01/1.0.0": {
-      "type": "project",
-      "serviceable": false,
-      "sha512": ""
-    },
     "Day02/1.0.0": {
       "type": "project",
       "serviceable": false,

@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using Shared;
 
@@ -12,12 +11,6 @@ namespace Days
             DayNumber = 1;
             Title = "Sonar Sweep";
         }
-        public override IEnumerable<string> GatherInput()
-        {
-            var inputs = ReadFile().ToList();
-            return inputs;
-        }
-
         public override string Puzzle1(IEnumerable<string> inputsString)
         {
             var inputs = inputsString.Select(x => int.Parse(x)).ToList();

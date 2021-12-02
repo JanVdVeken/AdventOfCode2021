@@ -52,7 +52,11 @@ namespace Shared
             return File.ReadAllLines(inputFile );
         }
 
-        public abstract IEnumerable<string> GatherInput();
+        public IEnumerable<string> GatherInput()
+        {
+            var inputs = ReadFile().ToList();
+            return inputs;
+        }
 
         public abstract string Puzzle1(IEnumerable<string> inputsString);
 
