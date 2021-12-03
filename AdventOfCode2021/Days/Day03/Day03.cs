@@ -22,6 +22,8 @@ namespace Days
         {
             BinaryInterpreter binaryInterpreter = new BinaryInterpreter(inputsString.ToList());
             binaryInterpreter.StartLifeSupportCalculations();
-            return binaryInterpreter.LiveSupportRating().ToString();        }
+            return binaryInterpreter.LiveSupportRating().ToString();
+            
+        }
     }
 }
