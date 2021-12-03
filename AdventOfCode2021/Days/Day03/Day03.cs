@@ -14,13 +14,14 @@ namespace Days
         public override string Puzzle1(IEnumerable<string> inputsString)
         {
             BinaryInterpreter binaryInterpreter = new BinaryInterpreter(inputsString.ToList());
-            binaryInterpreter.StartInterpretation();
+            binaryInterpreter.StartPowerConsumptionCalculation();
             return binaryInterpreter.PowerConsumption().ToString();
         }
 
         public override string Puzzle2(IEnumerable<string> inputsString)
         {
-            throw new System.NotImplementedException();
-        }
+            BinaryInterpreter binaryInterpreter = new BinaryInterpreter(inputsString.ToList());
+            binaryInterpreter.StartLifeSupportCalculations();
+            return binaryInterpreter.LiveSupportRating().ToString();        }
     }
 }
