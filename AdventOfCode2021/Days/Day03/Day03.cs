@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 using Shared;
 
 namespace Days
@@ -8,11 +9,13 @@ namespace Days
         public Day03()
         {
             DayNumber = 3;
-            Title = "";
+            Title = "Binary Diagnostic";
         }
         public override string Puzzle1(IEnumerable<string> inputsString)
         {
-            throw new System.NotImplementedException();
+            BinaryInterpreter binaryInterpreter = new BinaryInterpreter(inputsString.ToList());
+            binaryInterpreter.StartInterpretation();
+            return binaryInterpreter.PowerConsumption().ToString();
         }
 
         public override string Puzzle2(IEnumerable<string> inputsString)

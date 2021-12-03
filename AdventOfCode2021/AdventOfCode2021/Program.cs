@@ -11,7 +11,8 @@ namespace AdventOfCode2021
         public static List<Day> Days = new()
         {
             new Day01(),
-            new Day02()
+            new Day02(),
+            new Day03()
         };
         static void Main(string[] args)
         {
