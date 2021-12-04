@@ -22,7 +22,8 @@ namespace Days
 
         public override string Puzzle2(IEnumerable<string> inputsString)
         {
-            throw new System.NotImplementedException();
-        }
+            BingoController controller = new BingoController(inputsString.ToList());
+            controller.PlayBingoToLose();
+            return controller.GetLosingFormValue().ToString();        }
     }
 }

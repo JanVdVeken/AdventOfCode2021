@@ -101,6 +101,15 @@ namespace Day04.Test
             
             Assert.Equal("4512", result);
         }
+        [Fact]
+        void P2_WithTestData_Returns1924()
+        {
+            var testInput = File.ReadLines(_testInputLocation);
+            
+            var result = _do4.Puzzle2(testInput);
+            
+            Assert.Equal("1924", result);
+        }
     }
     public static class TestForms
     {
