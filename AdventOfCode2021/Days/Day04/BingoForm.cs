@@ -19,13 +19,13 @@ namespace Days
         public BingoForm(List<string> input)
         {
             Form = new FormCell[_size, _size];
-            for(int i =0;i<input.Count;i++)
+            for(int i =0;i<_size;i++)
             {
                 var cellElements = input[i].Split(" ")
                         .Where(x => !string.IsNullOrEmpty(x))
                         .Select(int.Parse)
                         .ToList();
-                for (int y = 0; y < cellElements.Count(); y++)
+                for (int y = 0; y < _size; y++)
                 { 
                     Form[i, y] = new FormCell(cellElements[y],false);
                 }

@@ -30,6 +30,8 @@ namespace Days
                     currentListOfLines.Add(line);
                 }
             }
+            Forms.Add(new BingoForm(currentListOfLines));
+            
         }
         
         public void PlayBingo()

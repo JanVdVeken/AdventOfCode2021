@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -39,8 +40,7 @@ namespace Day04.Test
             var testInput = File.ReadLines(_testInputLocation);
             
             BingoController controller = new BingoController(testInput.ToList());
-            
-            
+
             Assert.Equal(3,controller.Forms.Count());
         }
 
