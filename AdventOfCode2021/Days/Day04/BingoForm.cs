@@ -25,7 +25,6 @@ namespace Days
                         .Where(x => !string.IsNullOrEmpty(x))
                         .Select(int.Parse)
                         .ToList();
-                Console.WriteLine(cellElements.Count());
                 for (int y = 0; y < cellElements.Count(); y++)
                 { 
                     Form[i, y] = new FormCell(cellElements[y],false);

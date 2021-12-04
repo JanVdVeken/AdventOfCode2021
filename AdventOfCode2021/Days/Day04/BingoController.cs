@@ -10,13 +10,13 @@ namespace Days
     public class BingoController
     {
         public readonly List<BingoForm> Forms;
-        private readonly List<int> _inputDigits;
+        private readonly List<int> _BingoNumbers;
         private int _lastCalledNumber;
 
         public BingoController(List<string> inputs)
         {
             Forms = new List<BingoForm>();
-            _inputDigits = inputs[0].Split(",").ToList().Select(int.Parse).ToList();
+            _BingoNumbers = inputs[0].Split(",").ToList().Select(int.Parse).ToList();
             var currentListOfLines = new List<string>();
             foreach(var line in inputs.Skip(2))
             {
@@ -29,19 +29,16 @@ namespace Days
                 {
                     currentListOfLines.Add(line);
                 }
-                
             }
         }
         
         public void PlayBingo()
         {
-            foreach (int number in _inputDigits)
+            foreach (int number in _BingoNumbers)
             {
-                while (!Forms.Any(form => form.CheckIfFormIsCompletedRowsColumns()))
-                {
-                    Forms.ForEach(x => x.NewNumber(number));
-                    _lastCalledNumber = number;
-                }
+                Forms.ForEach(x => x.NewNumber(number));
+                _lastCalledNumber = number;
+                if (Forms.Any(form => form.CheckIfFormIsCompletedRowsColumns())) break;
             }
         }
 
