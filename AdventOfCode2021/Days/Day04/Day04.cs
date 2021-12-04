@@ -1,4 +1,6 @@
 using System.Collections.Generic;
+using System.Linq;
+using System.Net.Mime;
 using Shared;
 
 namespace Days
@@ -8,11 +10,14 @@ namespace Days
         public Day04()
         {
             DayNumber = 4;
-            Title = "TBD";
+            Title = "Giant Squid";
         }
+
         public override string Puzzle1(IEnumerable<string> inputsString)
         {
-            throw new System.NotImplementedException();
+            BingoController controller = new BingoController(inputsString.ToList());
+            controller.PlayBingo();
+            return controller.GetWinningFormValue().ToString();
         }
 
         public override string Puzzle2(IEnumerable<string> inputsString)
