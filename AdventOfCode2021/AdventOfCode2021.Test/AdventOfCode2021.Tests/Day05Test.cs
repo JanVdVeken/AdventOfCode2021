@@ -53,7 +53,24 @@ namespace DaysTest
         [InlineData("5,9 -> 5,9",1)]
         [InlineData("5,1 -> 5,9",9)]
         [InlineData("5,9 -> 5,1",9)]
-        void Line_ShouldContainMultiplePoints(string input, int expected)
+        void HorizontalOrVerticalLine_ShouldContainPoints(string input, int expected)
+        {
+            var line = new Line(input);
+
+            var result = line.ReturnAllPointsOnLine();
+            
+            Assert.Equal(expected,result.Count());
+        }
+        
+        [Theory]
+        [InlineData("0,0 -> 1,1",2)]
+        [InlineData("1,1 -> 0,0",2)]
+        [InlineData("0,0 -> 9,9",10)]
+        [InlineData("2,2 -> 9,9",8)]
+        [InlineData("3,5 -> 5,7",3)]
+        [InlineData("5,7 -> 3,5",3)]
+        [InlineData("9,7 -> 7,9",3)]
+        void DiagonalLine_ShouldContainPoints(string input, int expected)
         {
             var line = new Line(input);
 
@@ -69,6 +86,15 @@ namespace DaysTest
             var result = _do5.Puzzle1(testInput);
             
             Assert.Equal("5", result);
+        }
+        [Fact]
+        void P2_WithTestData_Returns12()
+        {
+            var testInput = File.ReadLines(_testInputLocation);
+            
+            var result = _do5.Puzzle2(testInput);
+            
+            Assert.Equal("12", result);
         }
     }
 }

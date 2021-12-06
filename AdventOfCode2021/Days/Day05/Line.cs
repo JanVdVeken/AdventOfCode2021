@@ -66,7 +66,50 @@ namespace Days
             }
             else
             {
-                //Diagonaal
+                if (StartPoint.X > EndPoint.X)
+                {
+                    if (StartPoint.Y > EndPoint.Y)
+                    {
+                        int y = EndPoint.Y;
+                        for (int x = EndPoint.X; x <= StartPoint.X; x++)
+                        {
+                            pointsOnLine.Add(new Point(x,y));
+                            y++;
+                        }  
+                    }
+                    else
+                    {
+                        int y = EndPoint.Y;
+                        for (int x = EndPoint.X; x <= StartPoint.X; x++)
+                        {
+                            pointsOnLine.Add(new Point(x,y));
+                            y--;
+                        } 
+                    }
+
+                }
+                else
+                {
+                    if (StartPoint.Y > EndPoint.Y)
+                    {
+                        int y = StartPoint.Y;
+                        for (int x = StartPoint.X; x <= EndPoint.X; x++)
+                        {
+                            pointsOnLine.Add(new Point(x,y));
+                            y--;
+                        }     
+                    }
+                    else
+                    {
+                        int y = StartPoint.Y;
+                        for (int x = StartPoint.X; x <= EndPoint.X; x++)
+                        {
+                            pointsOnLine.Add(new Point(x,y));
+                            y++;
+                        }  
+                    }
+ 
+                }
             }
             return pointsOnLine;
         }
