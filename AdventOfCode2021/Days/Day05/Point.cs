@@ -28,7 +28,7 @@ namespace Days
 
         public int GetHashCode(Point obj)
         {
-            return $"{obj.X}{obj.Y}".GetHashCode();
+            return $"{obj.X}|{obj.Y}".GetHashCode();
         }
     }
     
