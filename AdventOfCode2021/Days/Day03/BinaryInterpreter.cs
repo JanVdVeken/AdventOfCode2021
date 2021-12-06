@@ -55,7 +55,6 @@ namespace Day03
             var oxygenList = new List<string>(_inputs);
             var maxI = oxygenList[0].Length;
             int i = 0;
-            Console.WriteLine("Oxygen");
             while (oxygenList.Count() > 1)
             {
                 int tracker = 0;
@@ -70,8 +69,6 @@ namespace Day03
                 i++;
             }
             _oxygenRate = Convert.ToInt32(oxygenList[0], 2);
-            
-            Console.WriteLine("Co2");
             var c02List = new List<string>(_inputs);
             i = 0;
             while (c02List.Count() > 1)

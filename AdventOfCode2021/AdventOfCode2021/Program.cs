@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using Shared;
 
 namespace AdventOfCode2021
@@ -17,8 +18,9 @@ namespace AdventOfCode2021
             new Day06.Day06(),
             new Day07.Day07()
         };
-        static void Main(string[] args)
+        static Task Main(string[] args)
         {
+            GetInputService.GetInputService.GetInputs();
             while (true)
             {
                 Console.WriteLine("Which Day do you want ?");
