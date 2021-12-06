@@ -14,7 +14,8 @@ namespace AdventOfCode2021
             new Day02(),
             new Day03(),
             new Day04(),
-            new Day05()
+            new Day05(),
+            new Day06()
         };
         static void Main(string[] args)
         {
