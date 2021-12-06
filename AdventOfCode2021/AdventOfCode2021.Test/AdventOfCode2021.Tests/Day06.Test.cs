@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Reflection;
@@ -16,6 +17,18 @@ namespace DaysTest
             _do6 = new Day06();
             _testInputLocation =
                 @"../../../../../AdventOfCode2021.Test/AdventOfCode2021.Tests/TestInputs/D06.txt";
+        }
+
+        [Fact]
+        void School_WithFishOnDayZero_ShouldReproduce()
+        {
+            var testInput = new List<int>(){0,0};
+            var testSchool = new School(testInput);
+            
+            testSchool.SimulateDays(1);
+            
+            Assert.Equal(new long[]{0,0,0,0,0,0,2,0,2},testSchool.GetArray());
+
         }
         [Fact]
         void P1_WithTestData_Returns5934()

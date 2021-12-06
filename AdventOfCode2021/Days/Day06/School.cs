@@ -5,34 +5,35 @@ namespace Days
 {
     public class School
     {
-        private List<LanternFish> lanternfish;
-
-        public School()
-        {
-            lanternfish = new List<LanternFish>();
-        }
+        private long[] _lanternfish;
         
         public School(List<int> inputs)
         {
-            lanternfish = new List<LanternFish>();
-            inputs.ForEach(x => lanternfish.Add(new LanternFish(x)));
+            _lanternfish = new long[9];
+            inputs.ForEach(x => _lanternfish[x] += 1);
         }
-        
-        public int GetSchoolSize()
+
+        public long[] GetArray()
         {
-            return lanternfish.Count();
+            return _lanternfish;
+        }
+        public long GetSchoolSize()
+        {
+            return _lanternfish.Sum();
         }
 
         public void SimulateDays(int days)
         {
             for (int i = 0; i < days; i++)
             {
-                int count = 0;
-                lanternfish.ForEach(x => count += x.AgeOneDay());
-                for (int j = 0; j < count; j++)
+                var tempArray = new long[9];
+                for (int j = 0; j < _lanternfish.Count()-1; j++)
                 {
-                    lanternfish.Add(new LanternFish(8));
+                    tempArray[j] = _lanternfish[j + 1];
                 }
+                tempArray[8] = _lanternfish[0];
+                tempArray[6] += _lanternfish[0];
+                _lanternfish = tempArray;
             }
         }
     }
