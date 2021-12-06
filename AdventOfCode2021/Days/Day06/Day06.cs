@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 using Shared;
 
 namespace Days
@@ -12,12 +13,18 @@ namespace Days
         }
         public override string Puzzle1(IEnumerable<string> inputsString)
         {
-            throw new System.NotImplementedException();
+            var inputs = inputsString.ToList().First().Split(",").ToList().Select(x => int.Parse(x));
+            var school = new School(inputs.ToList());
+            school.SimulateDays(80);
+            return school.GetSchoolSize().ToString();
         }
 
         public override string Puzzle2(IEnumerable<string> inputsString)
         {
-            throw new System.NotImplementedException();
+            var inputs = inputsString.ToList().First().Split(",").ToList().Select(x => int.Parse(x));
+            var school = new School(inputs.ToList());
+            school.SimulateDays(256);
+            return school.GetSchoolSize().ToString();
         }
     }
 }

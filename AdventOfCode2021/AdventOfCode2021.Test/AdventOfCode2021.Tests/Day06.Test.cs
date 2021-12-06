@@ -26,5 +26,14 @@ namespace DaysTest
             
             Assert.Equal("5934", result);
         }
+        [Fact]
+        void P2_WithTestData_Returns26984457539()
+        {
+            var testInput = File.ReadLines(_testInputLocation);
+            
+            var result = _do6.Puzzle2(testInput);
+            
+            Assert.Equal("26984457539", result);
+        }
     }
 }
