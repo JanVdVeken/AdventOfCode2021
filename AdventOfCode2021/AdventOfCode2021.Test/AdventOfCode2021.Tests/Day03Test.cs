@@ -1,17 +1,16 @@
 using System.IO;
-using Days;
 using Xunit;
 
 namespace DaysTest
 {
     public class Day03Test
     {
-        private readonly Day03 _d03;
+        private readonly Day03.Day03 _d03;
         private readonly string _testInputLocation;
 
         public Day03Test()
         {
-            _d03 = new Day03();
+            _d03 = new Day03.Day03();
             _testInputLocation =
                 @"../../../../../AdventOfCode2021.Test/AdventOfCode2021.Tests/TestInputs/D03.txt";
             

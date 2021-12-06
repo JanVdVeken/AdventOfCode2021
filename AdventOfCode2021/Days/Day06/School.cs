@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace Days
+namespace Day06
 {
     public class School
     {

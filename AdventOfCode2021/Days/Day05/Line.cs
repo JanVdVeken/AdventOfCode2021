@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 
-namespace Days
+namespace Day05
 {
     public class Line
     {

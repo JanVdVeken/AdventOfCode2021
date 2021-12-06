@@ -1,19 +1,19 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using Days;
+using Day04;
 using Xunit;
 
 namespace DaysTest
 {
     public class Day04Test
     {
-        private readonly Day04 _do4;
+        private readonly Day04.Day04 _do4;
         private readonly string _testInputLocation;
         
         public Day04Test()
         {
-            _do4 = new Day04();
+            _do4 = new Day04.Day04();
             _testInputLocation =
                 @"../../../../../AdventOfCode2021.Test/AdventOfCode2021.Tests/TestInputs/D04.txt";
         }

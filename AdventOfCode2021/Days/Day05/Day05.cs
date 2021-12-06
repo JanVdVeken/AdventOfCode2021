@@ -1,9 +1,8 @@
-using System;
 using System.Collections.Generic;
 using System.Linq;
 using Shared;
 
-namespace Days
+namespace Day05
 {
     public class Day05 : Day
     {

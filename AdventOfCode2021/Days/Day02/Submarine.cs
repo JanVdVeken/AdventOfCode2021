@@ -1,4 +1,4 @@
-﻿namespace Days
+﻿namespace Day02
 {
     public class Submarine
     {

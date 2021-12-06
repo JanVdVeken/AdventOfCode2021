@@ -1,11 +1,8 @@
 using System;
 using System.Collections.Generic;
-using System.Data;
 using System.Linq;
-using System.Net.Mime;
-using System.Runtime.Serialization;
 
-namespace Days
+namespace Day04
 {
     public class BingoForm
     {

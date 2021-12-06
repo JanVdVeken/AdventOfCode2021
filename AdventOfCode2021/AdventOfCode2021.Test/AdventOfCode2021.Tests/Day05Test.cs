@@ -1,19 +1,19 @@
 using System.IO;
 using System.Linq;
 using System.Reflection;
-using Days;
+using Day05;
 using Xunit;
 
 namespace DaysTest
 {
     public class Day05Test
     {
-        private readonly Day05 _do5;
+        private readonly Day05.Day05 _do5;
         private readonly string _testInputLocation;
         
         public Day05Test()
         {
-            _do5 = new Day05();
+            _do5 = new Day05.Day05();
             _testInputLocation =
                 @"../../../../../AdventOfCode2021.Test/AdventOfCode2021.Tests/TestInputs/D05.txt";
         }

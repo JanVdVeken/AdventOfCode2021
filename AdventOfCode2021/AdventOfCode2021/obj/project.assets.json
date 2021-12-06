@@ -80,6 +80,19 @@
           "bin/placeholder/Day06.dll": {}
         }
       },
+      "Day07/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "Shared": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Day07.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Day07.dll": {}
+        }
+      },
       "Shared/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v5.0",
@@ -123,6 +136,11 @@
       "path": "../Days/Day06/Day06.csproj",
       "msbuildProject": "../Days/Day06/Day06.csproj"
     },
+    "Day07/1.0.0": {
+      "type": "project",
+      "path": "../Days/Day07/Day07.csproj",
+      "msbuildProject": "../Days/Day07/Day07.csproj"
+    },
     "Shared/1.0.0": {
       "type": "project",
       "path": "../Shared/Shared.csproj",
@@ -137,6 +155,7 @@
       "Day04 >= 1.0.0",
       "Day05 >= 1.0.0",
       "Day06 >= 1.0.0",
+      "Day07 >= 1.0.0",
       "Shared >= 1.0.0"
     ]
   },
@@ -182,6 +201,9 @@
             },
             "C:\\Users\\vande\\OneDrive\\Bureaublad\\GitRoot\\AdventOfCode\\AdventOfCode2021\\AdventOfCode2021\\Days\\Day06\\Day06.csproj": {
               "projectPath": "C:\\Users\\vande\\OneDrive\\Bureaublad\\GitRoot\\AdventOfCode\\AdventOfCode2021\\AdventOfCode2021\\Days\\Day06\\Day06.csproj"
+            },
+            "C:\\Users\\vande\\OneDrive\\Bureaublad\\GitRoot\\AdventOfCode\\AdventOfCode2021\\AdventOfCode2021\\Days\\Day07\\Day07.csproj": {
+              "projectPath": "C:\\Users\\vande\\OneDrive\\Bureaublad\\GitRoot\\AdventOfCode\\AdventOfCode2021\\AdventOfCode2021\\Days\\Day07\\Day07.csproj"
             },
             "C:\\Users\\vande\\OneDrive\\Bureaublad\\GitRoot\\AdventOfCode\\AdventOfCode2021\\AdventOfCode2021\\Shared\\Shared.csproj": {
               "projectPath": "C:\\Users\\vande\\OneDrive\\Bureaublad\\GitRoot\\AdventOfCode\\AdventOfCode2021\\AdventOfCode2021\\Shared\\Shared.csproj"

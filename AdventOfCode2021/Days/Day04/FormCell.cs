@@ -1,4 +1,4 @@
-namespace Days
+namespace Day04
 {
     public class FormCell
     {

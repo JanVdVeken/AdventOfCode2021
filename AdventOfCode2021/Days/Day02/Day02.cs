@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using Shared;
 
-namespace Days
+namespace Day02
 {
     public class Day02 : Day
     {

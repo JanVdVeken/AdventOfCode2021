@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Shared;
 
-namespace Days
+namespace Day06
 {
     public class Day06 : Day
     {

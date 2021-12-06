@@ -1,9 +1,8 @@
 using System.Collections.Generic;
 using System.Linq;
-using System.Net.Mime;
 using Shared;
 
-namespace Days
+namespace Day04
 {
     public class Day04 : Day
     {
