@@ -6,7 +6,7 @@
 
         <IsPackable>false</IsPackable>
 
-        <RootNamespace>Day03.Test</RootNamespace>
+        <RootNamespace>DaysTest</RootNamespace>
     </PropertyGroup>
 
     <ItemGroup>
