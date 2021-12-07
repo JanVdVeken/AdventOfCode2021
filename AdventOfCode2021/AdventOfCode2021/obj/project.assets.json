@@ -635,6 +635,19 @@
           "bin/placeholder/Day07.dll": {}
         }
       },
+      "Day08/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "Shared": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Day08.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Day08.dll": {}
+        }
+      },
       "GetInputService/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
@@ -2821,6 +2834,11 @@
       "path": "../Days/Day07/Day07.csproj",
       "msbuildProject": "../Days/Day07/Day07.csproj"
     },
+    "Day08/1.0.0": {
+      "type": "project",
+      "path": "../Days/Day08/Day08.csproj",
+      "msbuildProject": "../Days/Day08/Day08.csproj"
+    },
     "GetInputService/1.0.0": {
       "type": "project",
       "path": "../GetInputService/GetInputService.csproj",
@@ -2841,6 +2859,7 @@
       "Day05 >= 1.0.0",
       "Day06 >= 1.0.0",
       "Day07 >= 1.0.0",
+      "Day08 >= 1.0.0",
       "GetInputService >= 1.0.0",
       "Shared >= 1.0.0"
     ]
@@ -2890,6 +2909,9 @@
             },
             "C:\\Users\\vande\\OneDrive\\Bureaublad\\GitRoot\\AdventOfCode\\AdventOfCode2021\\AdventOfCode2021\\Days\\Day07\\Day07.csproj": {
               "projectPath": "C:\\Users\\vande\\OneDrive\\Bureaublad\\GitRoot\\AdventOfCode\\AdventOfCode2021\\AdventOfCode2021\\Days\\Day07\\Day07.csproj"
+            },
+            "C:\\Users\\vande\\OneDrive\\Bureaublad\\GitRoot\\AdventOfCode\\AdventOfCode2021\\AdventOfCode2021\\Days\\Day08\\Day08.csproj": {
+              "projectPath": "C:\\Users\\vande\\OneDrive\\Bureaublad\\GitRoot\\AdventOfCode\\AdventOfCode2021\\AdventOfCode2021\\Days\\Day08\\Day08.csproj"
             },
             "C:\\Users\\vande\\OneDrive\\Bureaublad\\GitRoot\\AdventOfCode\\AdventOfCode2021\\AdventOfCode2021\\GetInputService\\GetInputService.csproj": {
               "projectPath": "C:\\Users\\vande\\OneDrive\\Bureaublad\\GitRoot\\AdventOfCode\\AdventOfCode2021\\AdventOfCode2021\\GetInputService\\GetInputService.csproj"
