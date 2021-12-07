@@ -21,7 +21,6 @@
 **/.idea/**/contentModel.xml
 **/.idea/**/modules.xml
 **/.idea/
-**/*.bak
 
 *.suo
 *.user
@@ -34,3 +33,4 @@ _UpgradeReport_Files/
 Thumbs.db
 Desktop.ini
 .DS_Store
+**/GetInputService/

@@ -21,6 +21,7 @@ namespace AdventOfCode2021
         static Task Main(string[] args)
         {
             GetInputService.GetInputService.GetInputs();
+            Console.Title = "Advent Of Code 2021";
             while (true)
             {
                 Console.WriteLine("Which Day do you want ?");

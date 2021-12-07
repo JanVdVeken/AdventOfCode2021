@@ -25,14 +25,24 @@ namespace DaysTest
             
             Assert.Equal("37", result);
         }
-        
+
+        [Fact]
+        void IncrementingFuelUsage_Withinput11_ShouldReturn66()
+        {
+            var distance = 11;
+
+            var result = _day.IncrementingFuelUsage(11);
+            
+            Assert.Equal(66,result);
+        }
+        [Fact]
         void P2_WithTestData_ShouldReturnCorrectValue()
         {
             var testInput = File.ReadLines(_testInputLocation);
             
             var result = _day.Puzzle2(testInput);
             
-            Assert.Equal("", result);
+            Assert.Equal("168", result);
         }
     }
 }
