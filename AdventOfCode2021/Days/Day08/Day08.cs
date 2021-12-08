@@ -19,15 +19,18 @@ namespace Day08
                 .ToList()
                 .Select(x => x.Split(" | ")[1]).ToList()
                 .Select(x => x.Split(" "))
-                .Sum(Y => 
-                        Y.Count(x => x.Length == 2 | x.Length == 4 | x.Length == 3 | x.Length == 7)
+                .Sum(y => 
+                        y.Count(x => x.Length == 2 | x.Length == 4 | x.Length == 3 | x.Length == 7)
                 );
             return count.ToString();
         }
 
         public override string Puzzle2(IEnumerable<string> inputsString)
         {
-            throw new System.NotImplementedException();
+            var sevenSegmentDisplays = new List<SevenSegmentDisplay>();
+            inputsString.ToList().ForEach(line => sevenSegmentDisplays.Add(new SevenSegmentDisplay(line)));
+            sevenSegmentDisplays.ForEach( x => x.CalculateConnections());
+            return sevenSegmentDisplays.Sum(x => x.GetValueOfOutput()).ToString();
         }
     }
 }
