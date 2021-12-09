@@ -1,4 +1,6 @@
+using System.Collections.Generic;
 using System.IO;
+using Day09;
 using Xunit;
 
 namespace DaysTest
@@ -21,7 +23,28 @@ namespace DaysTest
             
             var result = _day.Puzzle1(testInput);
             
-            Assert.Equal("", result);
+            Assert.Equal("15", result);
+        }
+
+        [Fact]
+        void CtorCave_WithInput2by2_ShouldReturnCorrectOutput()
+        {
+            var input = new List<string>() {"99", "91"};
+            Cave cave = new Cave(input);
+            
+            cave.CalculateLowestPoints();
+            
+            Assert.Equal(2,cave.SumOfLowestPoints());
+        }
+        [Fact]
+        void CtorCave_WithInput3by3_ShouldReturnCorrectOutput()
+        {
+            var input = new List<string>() {"191", "919","191"};
+            Cave cave = new Cave(input);
+            
+            cave.CalculateLowestPoints();
+            
+            Assert.Equal(10,cave.SumOfLowestPoints());
         }
 
         [Fact]
