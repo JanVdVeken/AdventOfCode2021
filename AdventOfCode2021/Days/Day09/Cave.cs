@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Data.SqlTypes;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 
 namespace Day09
 {
@@ -11,8 +12,12 @@ namespace Day09
         private int _width;
         private int _depth;
 
+        private List<Point> _points;
+        private List<List<Point>> _basins;
+
         public Cave(List<string> input)
         {
+            _basins = new List<List<Point>>();
             _depth = input.First().Length;
             _width = input.Count;
             CaveOverview = new Point[_width, _depth];
@@ -31,11 +36,20 @@ namespace Day09
 
         public void CalculateLowestPoints()
         {
+            _points = new List<Point>();
             for (int i = 0; i < _width; i++)
             {
                 for (int j = 0; j < _depth; j++)
                 {
                     CaveOverview[i, j].IslowestInArea = CalculateIsLowestNeighbour(i,j);
+                    _points.Add(new Point()
+                        {
+                            X = i,
+                            Y = j,
+                            IslowestInArea = CaveOverview[i, j].IslowestInArea,
+                            Value = CaveOverview[i, j].Value,
+                            IsVisited = false
+                        });
                 }
             }
         }
@@ -110,6 +124,48 @@ namespace Day09
             return false;
         }
 
+        public void CalculateBasins()
+        {
+            CalculateLowestPoints();
+            foreach (var lowestPoint in _points.Where(x => x.IslowestInArea))
+            {
+                if (_basins.Any(x => x.Contains(lowestPoint))) continue;
+                var points = new List<Point>(_points);
+                var currentBasin = CalculateBasinFromPoint(lowestPoint,points);
+                _basins.Add(currentBasin);
+            }
+        }
+
+        private List<Point> CalculateBasinFromPoint(Point point,List<Point> points)
+        {
+            point.IsVisited = true;
+            var possibleNeighbours = CalculatePossibleNeighbours(point, points);
+            if (!possibleNeighbours.Any()) return new List<Point>(){point};
+            
+            var returnList = new List<Point>();
+            foreach (var newPoint in possibleNeighbours)
+            {
+                CalculatePossibleNeighbours(newPoint, points).ForEach(x => returnList.Add(x));
+            }
+            return returnList;
+        }
+
+        public List<Point> CalculatePossibleNeighbours(Point point, List<Point> points)
+        {
+            var neighbours = new List<Point>();
+            if(points.Any(x => x.X == point.X+1 & x.Y == point.Y & !x.IsVisited & x.Value != 9)) neighbours.Add(points.FirstOrDefault(x => x.X == point.X+1 & x.Y == point.Y & !x.IsVisited & x.Value != 9));
+            if(points.Any(x => x.X == point.X-1 & x.Y == point.Y & !x.IsVisited & x.Value != 9)) neighbours.Add(points.FirstOrDefault(x => x.X == point.X-1 & x.Y == point.Y & !x.IsVisited & x.Value != 9));
+            if(points.Any(x => x.X == point.X & x.Y == point.Y+1 & !x.IsVisited & x.Value != 9)) neighbours.Add(points.FirstOrDefault(x => x.X == point.X & x.Y == point.Y+1 & !x.IsVisited & x.Value != 9));
+            if(points.Any(x => x.X == point.X & x.Y == point.Y-1 & !x.IsVisited & x.Value != 9)) neighbours.Add(points.FirstOrDefault(x => x.X == point.X & x.Y == point.Y-1 & !x.IsVisited & x.Value != 9));
+            return neighbours;
+        }
+
+        public int ProductOfCountThreeBiggestBasins()
+        {
+            var orderdBasins = _basins.OrderBy(x => x.Count).ToList();
+            return orderdBasins[0].Count * orderdBasins[1].Count * orderdBasins[2].Count;
+        }
+        
         public int SumOfLowestPoints()
         {
             int sum = 0;

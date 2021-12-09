@@ -4,5 +4,8 @@ namespace Day09
     {
         public int Value;
         public bool IslowestInArea;
+        public int X;
+        public int Y;
+        public bool IsVisited;
     }
 }

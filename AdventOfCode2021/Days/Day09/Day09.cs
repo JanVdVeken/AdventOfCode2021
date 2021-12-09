@@ -20,7 +20,9 @@ namespace Day09
 
         public override string Puzzle2(IEnumerable<string> inputsString)
         {
-            throw new System.NotImplementedException();
+            var cave = new Cave(inputsString.ToList());
+            cave.CalculateBasins();
+            return cave.ProductOfCountThreeBiggestBasins().ToString();  
         }
     }
 }

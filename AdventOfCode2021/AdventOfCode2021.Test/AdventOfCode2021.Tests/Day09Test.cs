@@ -30,7 +30,7 @@ namespace DaysTest
         void CtorCave_WithInput2by2_ShouldReturnCorrectOutput()
         {
             var input = new List<string>() {"99", "91"};
-            Cave cave = new Cave(input);
+            var cave = new Cave(input);
             
             cave.CalculateLowestPoints();
             
@@ -40,7 +40,7 @@ namespace DaysTest
         void CtorCave_WithInput3by3_ShouldReturnCorrectOutput()
         {
             var input = new List<string>() {"191", "919","191"};
-            Cave cave = new Cave(input);
+            var cave = new Cave(input);
             
             cave.CalculateLowestPoints();
             
@@ -54,7 +54,7 @@ namespace DaysTest
             
             var result = _day.Puzzle2(testInput);
             
-            Assert.Equal("", result);
+            Assert.Equal("1134", result);
         }
     }
 }
