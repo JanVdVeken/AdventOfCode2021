@@ -132,20 +132,20 @@ namespace Day09
                 if (_basins.Any(x => x.Contains(lowestPoint))) continue;
                 var points = new List<Point>(_points);
                 var currentBasin = CalculateBasinFromPoint(lowestPoint,points);
-                _basins.Add(currentBasin);
+                _basins.Add(currentBasin.DistinctBy(x => (1000 *x.X) + x.Y).ToList());
             }
         }
 
         private List<Point> CalculateBasinFromPoint(Point point,List<Point> points)
         {
-            point.IsVisited = true;
+            
             var possibleNeighbours = CalculatePossibleNeighbours(point, points);
             if (!possibleNeighbours.Any()) return new List<Point>(){point};
-            
-            var returnList = new List<Point>();
+            point.IsVisited = true;
+            var returnList = new List<Point>(){point};
             foreach (var newPoint in possibleNeighbours)
             {
-                CalculatePossibleNeighbours(newPoint, points).ForEach(x => returnList.Add(x));
+                CalculateBasinFromPoint(newPoint, points).ForEach(x => returnList.Add(x));
             }
             return returnList;
         }
@@ -162,10 +162,14 @@ namespace Day09
 
         public int ProductOfCountThreeBiggestBasins()
         {
-            var orderdBasins = _basins.OrderBy(x => x.Count).ToList();
+            var orderdBasins = _basins.OrderByDescending(x => x.Count).ToList();
             return orderdBasins[0].Count * orderdBasins[1].Count * orderdBasins[2].Count;
         }
-        
+
+        public int GetBasinsCount()
+        {
+            return _basins.Count();
+        }
         public int SumOfLowestPoints()
         {
             int sum = 0;

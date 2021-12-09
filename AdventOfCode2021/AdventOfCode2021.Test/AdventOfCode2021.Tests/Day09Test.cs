@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using Day09;
 using Xunit;
 
@@ -56,5 +57,17 @@ namespace DaysTest
             
             Assert.Equal("1134", result);
         }
+
+        [Fact]
+        void CalculateBasins_WithTestDate_ShouldCreateFourBasins()
+        {
+            var testInput = File.ReadLines(_testInputLocation);
+            var cave = new Cave(testInput.ToList());
+            
+            cave.CalculateBasins();
+            
+            Assert.Equal(4, cave.GetBasinsCount());
+        }
+        
     }
 }
