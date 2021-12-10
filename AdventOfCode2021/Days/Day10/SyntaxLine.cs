@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -96,6 +97,32 @@ namespace Day10
                 default:
                     return 0;
             }
+        }
+
+        public long ValueOfIncompletedSyntax()
+        {
+            long output = 0;
+            OpenChuncks.Reverse();
+            foreach (var character in OpenChuncks)
+            {
+                output *= 5;
+                switch (character)
+                {
+                    case '(':
+                        output += 1;
+                        break;
+                    case '[':
+                        output += 2;
+                        break;
+                    case '{':
+                        output += 3;
+                        break;
+                    case '<':
+                        output += 4;
+                        break;
+                }
+            }
+            return output;
         }
     }
 }

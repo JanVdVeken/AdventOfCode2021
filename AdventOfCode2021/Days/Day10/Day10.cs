@@ -23,7 +23,14 @@ namespace Day10
 
         public override string Puzzle2(IEnumerable<string> inputsString)
         {
-            throw new System.NotImplementedException();
+            var syntaxes = new List<SyntaxLine>();
+            inputsString.ToList().ForEach(x => syntaxes.Add(new SyntaxLine(x)));
+            syntaxes.ForEach(x => x.CalculateSyntax());
+            var incompletedValues =
+                syntaxes.Where(x => !x.IsCorrupted)
+                    .Select(x => x.ValueOfIncompletedSyntax())
+                    .ToList();
+            return incompletedValues.OrderByDescending(x =>x).ToArray()[incompletedValues.Count/ 2].ToString();
         }
     }
 }

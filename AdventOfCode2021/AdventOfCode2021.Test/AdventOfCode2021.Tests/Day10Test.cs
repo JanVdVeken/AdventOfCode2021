@@ -1,4 +1,5 @@
 using System.IO;
+using Day10;
 using Xunit;
 
 namespace DaysTest
@@ -25,13 +26,25 @@ namespace DaysTest
             Assert.Equal("26397", result);
         }
 
+        [Fact]
         void P2_WithTestData_ShouldReturnCorrectValue()
         {
             var testInput = File.ReadLines(_testInputLocation);
             
             var result = _day.Puzzle2(testInput);
             
-            Assert.Equal("", result);
+            Assert.Equal("288957", result);
         }
+
+        [Fact]
+        void SyntaxCalculateIncompled_WithOneTestDataLine_ShouldReturnCorrectValue()
+        {
+            var syntax = new SyntaxLine("<{([{{}}[<[[[<>{}]]]>[]]");
+            
+            syntax.CalculateSyntax();
+            
+            Assert.Equal(294,syntax.ValueOfIncompletedSyntax());
+        }
+        
     }
 }
