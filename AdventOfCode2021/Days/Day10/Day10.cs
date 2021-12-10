@@ -1,4 +1,7 @@
+using System;
 using System.Collections.Generic;
+using System.Data;
+using System.Linq;
 using Shared;
 
 namespace Day10
@@ -7,12 +10,15 @@ namespace Day10
     {
         public Day10()
         {
-            Title = "";
+            Title = "Syntax Scoring";
             DayNumber = 10;
         }
         public override string Puzzle1(IEnumerable<string> inputsString)
         {
-            throw new System.NotImplementedException();
+            var syntaxes = new List<SyntaxLine>();
+            inputsString.ToList().ForEach(x => syntaxes.Add(new SyntaxLine(x)));
+            syntaxes.ForEach(x => x.CalculateSyntax());
+            return syntaxes.Sum(x => x.ValueOfWrongCharacter()).ToString();
         }
 
         public override string Puzzle2(IEnumerable<string> inputsString)

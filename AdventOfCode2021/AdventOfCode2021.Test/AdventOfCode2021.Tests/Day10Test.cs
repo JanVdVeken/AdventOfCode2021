@@ -15,13 +15,14 @@ namespace DaysTest
                 @"../../../../../AdventOfCode2021.Test/AdventOfCode2021.Tests/TestInputs/D10.txt";
         }
         
+        [Fact]
         void P1_WithTestData_ShouldReturnCorrectValue()
         {
             var testInput = File.ReadLines(_testInputLocation);
             
             var result = _day.Puzzle1(testInput);
             
-            Assert.Equal("", result);
+            Assert.Equal("26397", result);
         }
 
         void P2_WithTestData_ShouldReturnCorrectValue()
