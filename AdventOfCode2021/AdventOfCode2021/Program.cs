@@ -20,7 +20,8 @@ namespace AdventOfCode2021
             new Day08.Day08(),
             new Day09.Day09(),
             new Day10.Day10(),
-            new Day11.Day11()
+            new Day11.Day11(),
+            new Day12.Day12()
         };
         static Task Main(string[] args)
         {
