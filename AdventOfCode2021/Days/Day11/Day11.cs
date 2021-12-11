@@ -23,7 +23,11 @@ namespace Day11
 
         public override string Puzzle2(IEnumerable<string> inputsString)
         {
-            throw new System.NotImplementedException();
+            var octopusGrid = new OctopusGrid(inputsString.ToList());
+
+            var result = octopusGrid.SynchronizedFlashing();
+
+            return result.ToString();
         }
     }
 }

@@ -53,5 +53,28 @@ namespace Day11
                 _grid.ForEach(x => x.DidFlashthisStep = false);
             }
         }
+
+        public int SynchronizedFlashing()
+        {
+            int i = 0;
+            int amountOfFlashes =0;
+            while (amountOfFlashes != 100)
+            {
+                _grid.ForEach(x => x.IncreaseValue());
+                
+                while (_grid.Any(x => x.Value > 9 && !x.DidFlashthisStep))
+                {
+                    var currentOctopus = _grid.First(x => x.Value > 9 && !x.DidFlashthisStep);
+                    currentOctopus.DidFlashthisStep = true;
+                    GetNeighbours(currentOctopus).ForEach(x => x.IncreaseValue());
+                }
+                _grid.Where(x => x.DidFlashthisStep == true).ToList().ForEach(x => x.Value =0);
+                amountOfFlashes = _grid.Count(x => x.DidFlashthisStep);
+                _grid.ForEach(x => x.DidFlashthisStep = false);
+                i++;
+            }
+
+            return i;
+        }
     }
 }

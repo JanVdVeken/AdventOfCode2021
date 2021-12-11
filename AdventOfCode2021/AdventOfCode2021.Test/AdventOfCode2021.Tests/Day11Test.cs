@@ -81,13 +81,15 @@ namespace DaysTest
             Assert.Equal(204,cave.Flashes);
         }
 
+        [Fact]
         void P2_WithTestData_ShouldReturnCorrectValue()
         {
             var testInput = File.ReadLines(_testInputLocation);
-            
-            var result = _day.Puzzle2(testInput);
-            
-            Assert.Equal("", result);
+            var cave = new OctopusGrid(testInput.ToList());
+
+            var result = cave.SynchronizedFlashing();
+
+            Assert.Equal(195, result);
         }
     }
 }
