@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Runtime.CompilerServices;
 
@@ -19,9 +20,12 @@ namespace Day12
                 AddPointsToCaveSystem(twoPoints[1]);
                 var p1 = AllPoints.First(x => x.Value == twoPoints[0]);
                 var p2 = AllPoints.First(x => x.Value == twoPoints[1]);
-                AddConnectionBetweenPoints(p1!,p2!);
+                AddConnectionBetweenPoints(p1,p2);
             }
+        }
 
+        public void CalculateAllPathsWithoutDoubleLowerCasesWithStartingPoint()
+        {
             CalculateAllPathsWithoutDoubleLowerCases(AllPoints.First(x => x.Value.Equals("start")),"");
         }
 
@@ -33,14 +37,43 @@ namespace Day12
                 Count++;
                 return;
             }
-            var currentPath = path + point.Value;
+            var currentPath = path +'|' + point.Value;
             foreach (var connection in point.Connections)
             {
                 CalculateAllPathsWithoutDoubleLowerCases(connection,currentPath);
             }
         }
-        
+        public void CalculateAllPathsWithOneDoubleLowerCaseWithStartingPoint()
+        {
+            CalculateAllPathsWithOneDoubleLowerCase(AllPoints.First(x => x.Value.Equals("start")),"");
+        }
+        public void CalculateAllPathsWithOneDoubleLowerCase(Point point,string path)
+        {
+            if(ContainsMoreThenOneDoubleLowerCasePoint(path)) return;
+            if (point.Value.Equals("end"))
+            {
+                Count++;
+                return;
+            }
+            var currentPath = path +'|' + point.Value;
+            foreach (var connection in point.Connections.Where(x => !x.Value.Equals("start")))
+            {
+                CalculateAllPathsWithOneDoubleLowerCase(connection,currentPath);
+            }
+        }
 
+        public bool ContainsMoreThenOneDoubleLowerCasePoint(string input)
+        {
+            var allPossibleSmallCaves = AllPoints.Where(point => point.Value.All(char.IsLower)).Select(x => x.Value);
+            var currentTracker = 0;
+            foreach (var currentValue in allPossibleSmallCaves)
+            {
+                var temp = input.Replace(currentValue, "!");
+                if (temp.Count(x => x == '!') == 2) currentTracker++;
+                if (temp.Count(x => x == '!') > 2) return true;
+            }
+            return currentTracker >= 2;
+        }
         private void AddConnectionBetweenPoints(Point p1, Point p2)
         {
             p1.AddToConnections(p2);

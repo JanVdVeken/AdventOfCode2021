@@ -8,7 +8,6 @@ namespace Day12
     {
         public string Value;
         public List<Point> Connections;
-        public bool Visited;
 
         public Point(string value)
         {

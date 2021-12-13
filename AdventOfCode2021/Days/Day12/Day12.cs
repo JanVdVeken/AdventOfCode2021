@@ -14,13 +14,15 @@ namespace Day12
         public override string Puzzle1(IEnumerable<string> inputsString)
         {
             var cave = new CaveSystem(inputsString.ToList());
-
+            cave.CalculateAllPathsWithoutDoubleLowerCasesWithStartingPoint();
             return cave.Count.ToString();
         }
 
         public override string Puzzle2(IEnumerable<string> inputsString)
         {
-            throw new System.NotImplementedException();
+            var cave = new CaveSystem(inputsString.ToList());
+            cave.CalculateAllPathsWithOneDoubleLowerCaseWithStartingPoint();
+            return cave.Count.ToString();        
         }
     }
 }

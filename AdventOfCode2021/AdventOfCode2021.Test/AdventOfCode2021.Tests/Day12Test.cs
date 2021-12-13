@@ -1,8 +1,10 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using Day09;
 using Day12;
 using Xunit;
+using Point = Day12.Point;
 
 namespace DaysTest
 {
@@ -60,14 +62,37 @@ namespace DaysTest
 
             Assert.Equal(output, result);
         }
-
-        void P2_WithTestData_ShouldReturnCorrectValue()
+        [Theory]
+        [InlineData(@"../../../../../AdventOfCode2021.Test/AdventOfCode2021.Tests/TestInputs/D12_01.txt", "103")]
+        [InlineData(@"../../../../../AdventOfCode2021.Test/AdventOfCode2021.Tests/TestInputs/D12_02.txt", "3509")]
+        void P2_WithTestData_ShouldReturnCorrectValue(string input, string output)
         {
-            var testInput = File.ReadLines(_testInputLocation);
-            
+            var testInput = File.ReadLines(input);
+
             var result = _day.Puzzle2(testInput);
+
+            Assert.Equal(output, result);
+        }
+
+        [Fact]
+        void ContainsMoreThenOneDoubleLowerCasePoint_WithPathThatContainsMultipleLowerCase_ShouldReturnTrue()
+        {
+            var inputs = new List<string>() {"xyz-abc"};
+            var cave = new CaveSystem(inputs);
+
+            var result = cave.ContainsMoreThenOneDoubleLowerCasePoint("start|abc|xyz|abc|xyz");
             
-            Assert.Equal("", result);
+            Assert.True(result);
+        }
+        [Fact]
+        void ContainsMoreThenOneDoubleLowerCasePoint_WithPathThatContainsLowerCaseThreeTimes_ShouldReturnTrue()
+        {
+            var inputs = new List<string>() {"xyz-abc"};
+            var cave = new CaveSystem(inputs);
+
+            var result = cave.ContainsMoreThenOneDoubleLowerCasePoint("start|abc|abc|abc");
+            
+            Assert.True(result);
         }
     }
 }
