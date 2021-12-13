@@ -20,7 +20,11 @@ namespace Day13
 
         public override string Puzzle2(IEnumerable<string> inputsString)
         {
-            throw new System.NotImplementedException();
+            var origami = new OrigamiPaper(inputsString.ToList());
+            
+            origami.DoAllFolds();
+            origami.PrintToConsole();
+            return "This is the code";
         }
     }
 }

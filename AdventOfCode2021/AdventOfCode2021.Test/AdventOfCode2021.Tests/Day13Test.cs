@@ -43,14 +43,5 @@ namespace DaysTest
             
             Assert.Equal("17", result);
         }
-
-        void P2_WithTestData_ShouldReturnCorrectValue()
-        {
-            var testInput = File.ReadLines(_testInputLocation);
-            
-            var result = _day.Puzzle2(testInput);
-            
-            Assert.Equal("", result);
-        }
     }
 }

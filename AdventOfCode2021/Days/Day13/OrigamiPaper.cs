@@ -1,6 +1,8 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Mime;
+using System.Threading.Channels;
 
 namespace Day13
 {
@@ -23,6 +25,11 @@ namespace Day13
                     Folds.Add(new Fold(inputstring));
                 }
             }
+        }
+
+        public void DoAllFolds()
+        {
+            Folds.ForEach(DoTheFold);
         }
 
         public int CountPointsAfterTheFirstFold()
@@ -68,6 +75,25 @@ namespace Day13
                 
                 Points.Add(point);
             }
+        }
+
+        public void PrintToConsole()
+        {
+            // Console.WriteLine(Points.Max(x =>x.X));
+            // Console.WriteLine(Points.Max(x =>x.Y));
+            int maxX = 40;
+            int maxY= 6;
+            char[,] printArray = new char[maxX, maxY];
+            Points.ForEach(point => printArray[point.X,point.Y] = 'X');
+            for (int i = 0; i < maxY; i++)
+            {
+                for (int j = 0; j < maxX; j++)
+                {
+                    Console.Write(printArray[j,i]);
+                }
+                Console.WriteLine();
+            }
+            
         }
     }
 }
