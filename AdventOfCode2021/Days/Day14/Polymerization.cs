@@ -6,14 +6,13 @@ namespace Day14
     public class Polymerization
     {
         public readonly List<PairInsertion> PairInsertions;
-        private Dictionary<string, int> _polymerCount;
-        private Dictionary<char, long> _singleElementDict;
+        private Dictionary<string,long> _polymerCount;
+        private char _lastLetter;
 
         public Polymerization(List<string> inputs)
         {
             PairInsertions = new List<PairInsertion>();
-            _polymerCount = new Dictionary<string, int>();
-            _singleElementDict = new Dictionary<char, long>();
+            _polymerCount = new Dictionary<string, long>();
             foreach (string input in inputs.Where(x => !x.Equals(string.Empty)))
             {
                 if (!input.Contains("->"))
@@ -22,23 +21,21 @@ namespace Day14
                     {
                         AddToDict(input.Substring(i, 2), 1, _polymerCount);
                     }
-                    for (int i = 0; i < input.Length; i++)
-                    {
-                        AddToDict(input[i], 1, _singleElementDict);
-                    }
+                    _lastLetter = input.Last();
                 }
                 else
                 {
                     PairInsertions.Add(new PairInsertion(input));
                 }
             }
+            
         }
 
         public void Step(int amount)
         {
             for (int i = 0; i < amount; i ++)
             {
-                var newDictionary = new Dictionary<string, int>();
+                var newDictionary = new Dictionary<string, long>();
                 foreach (var key in _polymerCount.Keys)
                 {
                     var currentPair = PairInsertions.First(x => x.From.Equals(key));
@@ -46,18 +43,23 @@ namespace Day14
                     {
                         AddToDict(pair,_polymerCount[key],newDictionary);
                     }
-                    AddToDict(currentPair.To,_polymerCount[key],_singleElementDict);
                 }
-                _polymerCount = new Dictionary<string, int>(newDictionary);
+                _polymerCount = new Dictionary<string, long>(newDictionary);
             }
         }
 
         public long CalculateMostMinusFewest()
         {
-            return _singleElementDict.Values.Max() - _singleElementDict.Values.Min();
+            var temp = new Dictionary<char, long>();
+            foreach (var key in _polymerCount.Keys)
+            {
+                AddToDict(key[0],_polymerCount[key],temp);
+            }
+            AddToDict(_lastLetter,1,temp);
+            return temp.Values.Max() - temp.Values.Min(); 
         }
         
-        public void AddToDict(string key,int value, Dictionary<string, int > dict)
+        public void AddToDict(string key,long value, Dictionary<string, long > dict)
         {
             if (dict.Keys.Contains(key)) dict[key] += value;
             else dict[key] = value;
