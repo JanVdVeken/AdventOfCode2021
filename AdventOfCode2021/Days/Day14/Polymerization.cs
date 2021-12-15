@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System.Linq;
+using Shared.Extensions;
 
 namespace Day14
 {
@@ -19,7 +20,7 @@ namespace Day14
                 {
                     for (int i = 0; i < input.Length - 1; i++)
                     {
-                        AddToDict(input.Substring(i, 2), 1, _polymerCount);
+                        _polymerCount.AddToDictWithCheckOnExistingKey(input.Substring(i, 2), 1);
                     }
                     _lastLetter = input.Last();
                 }
@@ -41,7 +42,7 @@ namespace Day14
                     var currentPair = PairInsertions.First(x => x.From.Equals(key));
                     foreach (var pair in currentPair.GetTwoToPairs())
                     {
-                        AddToDict(pair,_polymerCount[key],newDictionary);
+                        newDictionary.AddToDictWithCheckOnExistingKey(pair,_polymerCount[key]);
                     }
                 }
                 _polymerCount = new Dictionary<string, long>(newDictionary);
@@ -53,21 +54,10 @@ namespace Day14
             var temp = new Dictionary<char, long>();
             foreach (var key in _polymerCount.Keys)
             {
-                AddToDict(key[0],_polymerCount[key],temp);
+                temp.AddToDictWithCheckOnExistingKey(key[0],_polymerCount[key]);
             }
-            AddToDict(_lastLetter,1,temp);
+            temp.AddToDictWithCheckOnExistingKey(_lastLetter,1);
             return temp.Values.Max() - temp.Values.Min(); 
-        }
-        
-        public void AddToDict(string key,long value, Dictionary<string, long > dict)
-        {
-            if (dict.Keys.Contains(key)) dict[key] += value;
-            else dict[key] = value;
-        }
-        public void AddToDict(char key,long value, Dictionary<char, long>? dict)
-        {
-            if (dict.Keys.Contains(key)) dict[key] += value;
-            else dict[key] = value;
         }
     }
 }
