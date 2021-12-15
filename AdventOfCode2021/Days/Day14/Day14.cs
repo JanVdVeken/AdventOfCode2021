@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 using Shared;
 
 namespace Day14
@@ -7,17 +8,25 @@ namespace Day14
     {
         public Day14()
         {
-            Title = "";
+            Title = "Extended Polymerization";
             DayNumber = 14;
         }
         public override string Puzzle1(IEnumerable<string> inputsString)
         {
-            throw new System.NotImplementedException();
+            var polymerization = new Polymerization(inputsString.ToList());
+        
+            polymerization.Step(10);
+            
+            return polymerization.CalculateMostMinusFewest().ToString();
         }
 
         public override string Puzzle2(IEnumerable<string> inputsString)
         {
-            throw new System.NotImplementedException();
+            var polymerization = new Polymerization(inputsString.ToList());
+        
+            polymerization.Step(40);
+            
+            return polymerization.CalculateMostMinusFewest().ToString();
         }
     }
 }
