@@ -1,4 +1,8 @@
+using System.Collections.Generic;
 using System.IO;
+using System.Linq;
+using System.Reflection.Emit;
+using Day15;
 using Xunit;
 
 namespace DaysTest
@@ -21,7 +25,7 @@ namespace DaysTest
             
             var result = _day.Puzzle1(testInput);
             
-            Assert.Equal("", result);
+            Assert.Equal("40", result);
         }
 
         void P2_WithTestData_ShouldReturnCorrectValue()

@@ -22,6 +22,7 @@
           "Day12": "1.0.0",
           "Day13": "1.0.0",
           "Day14": "1.0.0",
+          "Day15": "1.0.0",
           "GetInputService": "1.0.0",
           "Shared": "1.0.0"
         },
@@ -486,6 +487,14 @@
           "Day14.dll": {}
         }
       },
+      "Day15/1.0.0": {
+        "dependencies": {
+          "Shared": "1.0.0"
+        },
+        "runtime": {
+          "Day15.dll": {}
+        }
+      },
       "GetInputService/1.0.0": {
         "dependencies": {
           "Newtonsoft.Json": "9.0.1"
@@ -825,6 +834,11 @@
       "sha512": ""
     },
     "Day14/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Day15/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
